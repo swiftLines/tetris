@@ -32,9 +32,9 @@ top_left_y = s_height - play_height
 # SHAPE FORMATS
 
 S = [['.....',
-      '......',
-      '..00..',
-      '.00...',
+      '.....',
+      '..00.',
+      '.00..',
       '.....'],
      ['.....',
       '..0..',
@@ -168,7 +168,7 @@ def convert_shape_format(shape):
             if column == '0':
                 positions.append((shape.x + j, shape.y + i))
         
-        for i, pos in enumerate(positions):
+    for i, pos in enumerate(positions):
             positions[i] = (pos[0] - 2, pos[1] - 4)
 
     return positions
@@ -258,7 +258,7 @@ def draw_window(surface, grid, score=0):
     font = pygame.font.SysFont('comicsans', 60)
     label = font.render('Tetris', 1, (255,255,255))
 
-    surface.blit(label, (top_left_x + play_width/2 - (label.get_width()/2), 30))
+    surface.blit(label, (top_left_x + play_width / 2 - (label.get_width() / 2), 30))
 
     for i in range(len(grid)):
         for j in range(len(grid[i])):
